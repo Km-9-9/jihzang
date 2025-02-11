@@ -1,0 +1,5 @@
+.dd {
+  font-size: 34rpx;
+  text-align: center;
+  padding-top: 20rpx;
+}

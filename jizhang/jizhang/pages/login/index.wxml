@@ -1,0 +1,21 @@
+<view class="login" style="background-image: url('../../images/bg.png');background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <view class="container">
+      <view class="title">欢迎登录</view>
+      <view class="top">
+        <view class="input">
+          <van-icon slot="left-icon" size="21px" name="contact-o" class="icon" />
+          
+          <input bindinput="getUser" placeholder="请输入手机号" />
+        </view>
+        <!-- 密码 -->
+        <view class="input">
+          <van-icon slot="left-icon" size="21px" name="bag-o" class="icon" />
+          
+          <input type="password" bindinput="getPaw" placeholder="请输入密码" />
+          
+        </view>
+      </view>
+      <view class="btn" bind:tap="login">登 录</view>
+      <view class="singin" bind:tap="goRegister">注 册</view>
+    </view>
+  </view>

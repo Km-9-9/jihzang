@@ -1,0 +1,14 @@
+.set {
+  display: flex;
+  justify-content: center;
+}
+.set .btn_box {
+  margin: 30rpx auto;
+  width: 76%;
+}
+.set .btn_box .btn {
+  background-color: #747272;
+  border-radius: 30rpx;
+  height: 100rpx;
+  line-height: 110rpx;
+}

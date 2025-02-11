@@ -1,0 +1,143 @@
+page {
+  height: 100vh;
+  background-color: #fff;
+}
+.index .top {
+  width: 750rpx;
+  height: 300rpx;
+  background-color: var(--jizhangColor);
+}
+.index .top .title {
+  height: 120rpx;
+  text-align: center;
+  line-height: 120rpx;
+  font-size: 40rpx;
+}
+.index .top .leixing {
+  height: 60rpx;
+  padding-left: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.index .top .leixing .box {
+  width: 200rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a580fa;
+}
+.index .top .leixing .box .text {
+  width: 140rpx;
+  height: 40rpx;
+  border-right: 1rpx solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
+.index .top .leixing .box .van-icon {
+  width: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.index .top .menu {
+  display: flex;
+}
+.index .top .menu .time {
+  flex: 2;
+  border-right: 1rpx solid #000;
+}
+.index .top .menu .shouru {
+  flex: 3;
+}
+.index .top .menu .zhichu {
+  flex: 3;
+}
+.index .top .menu .menu_item {
+  margin-left: 30rpx;
+}
+.index .top .menu .menu_item .text {
+  font-size: 26rpx;
+  color: #302f2f;
+  margin-bottom: 15rpx;
+}
+.index .top .menu .menu_item .money {
+  display: flex;
+  align-items: flex-end;
+}
+.index .top .menu .menu_item .money .big {
+  font-size: 38rpx;
+}
+.index .top .menu .menu_item .money .small {
+  font-size: 28rpx;
+}
+.index .content .con_item {
+  width: 700rpx;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+  padding: 20rpx;
+  border-radius: 25rpx;
+  box-shadow: 0px 0px 10px rgba(177, 177, 177, 0.5);
+}
+.index .content .con_item .time {
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 32rpx;
+}
+.index .content .con_item .time .riqi {
+  margin-right: 20rpx;
+}
+.index .content .con_item .box {
+  display: flex;
+  align-items: center;
+  height: 90rpx;
+}
+.index .content .con_item .box .left {
+  flex: 1;
+}
+.index .content .con_item .box .left .img {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  background-color: #f8f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index .content .con_item .box .left .img image {
+  width: 70%;
+  height: 70%;
+}
+.index .content .con_item .box .right {
+  border-bottom: 1rpx solid #e0e0e0;
+  flex: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15rpx 0;
+}
+.index .content .con_item .box .right .leixing {
+  flex: 5;
+  display: flex;
+}
+.index .content .con_item .box .right .leixing .fenlei {
+  font-size: 40rpx;
+  margin-right: 15rpx;
+}
+.index .content .con_item .box .right .leixing .beizhu {
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  color: #bcbbbb;
+}
+.index .content .con_item .box .right .money {
+  flex: 3;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 40rpx;
+}

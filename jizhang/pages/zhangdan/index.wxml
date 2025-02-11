@@ -1,0 +1,37 @@
+<view class="zhangdan">
+    <view class="year_now" bindtap="handleYear">
+        {{yearNow}}年
+        <van-icon name="arrow-down" />
+    </view>
+
+    <!-- 年度总结余 -->
+    <view class="total">
+        <view class="text">结余</view>
+        <view class="total_money">{{yearJieyu}}</view>
+        <view class="gong">
+            <view class="shouru">收入：{{yearIncome}}</view>
+            <view class="zhichu">支出：{{yearDisburse}}</view>
+        </view>
+    </view>
+
+    <!-- 每月支出收入和结余 -->
+     <view class="content">
+        <view class="title">
+            <view class="title_item">月份</view>
+            <view class="title_item">月收入</view>
+            <view class="title_item">月支出</view>
+            <view class="title_item">月结余</view>
+        </view>
+        <view class="contain" wx:for="{{array}}">
+            <view class="con_item">{{item.month}}月</view>
+            <view class="con_item">{{item.shouru}}</view>
+            <view class="con_item">{{item.zhichu}}</view>
+            <view class="con_item">{{item.shouru - item.zhichu}}</view>
+        </view>
+     </view>
+
+     <!-- 选择年 -->
+  <van-action-sheet show="{{ showYear }}" title="选择日期" bind:close="onCloseYear">
+    <van-datetime-picker type="year-month" value="{{ currentDate }}" bind:input="onInput" bind:confirm="filterJizhang" bind:cancel="onCloseYear" />
+  </van-action-sheet>
+</view>

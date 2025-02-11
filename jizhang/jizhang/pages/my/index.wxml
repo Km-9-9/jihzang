@@ -1,0 +1,50 @@
+<view class="my">
+  <!-- 个人信息 -->
+  <view class="user_info">
+    <view class="user_img">
+      <image src="{{userInfo.avatarUrl}}" />
+    </view>
+    <view class="user_text">
+      <view class="user_name">{{userInfo.nickName}}</view>
+    </view>
+  </view>
+
+  <!-- 功能列表 -->
+  <view class="feature_list">
+    <navigator class="feature_item" hover-class="none" url="../remind/index">
+      <view class="left">
+        <view class="icon iconfont icon-jizhangtixing"></view>
+        <view class="feature_title">记账提醒</view>
+      </view>
+      <view class="right">></view>
+    </navigator>
+    <navigator class="feature_item" hover-class="none" url="../info/index">
+      <view class="left">
+        <view class="icon iconfont icon-gerenxinxi"></view>
+        <view class="feature_title">个人信息</view>
+      </view>
+      <view class="right">></view>
+    </navigator>
+    <navigator class="feature_item" hover-class="none" url="../dd/index">
+      <view class="left">
+        <view class="icon iconfont icon-kefu1"></view>
+        <view class="feature_title">联系客服</view>
+      </view>
+      <view class="right">></view>
+    </navigator>
+    <navigator class="feature_item" hover-class="none" url="../setting/index">
+      <view class="left">
+        <view class="icon iconfont icon-shezhi"></view>
+        <view class="feature_title">设置</view>
+      </view>
+      <view class="right">></view>
+    </navigator>
+    <navigator class="feature_item" hover-class="none" url="../about/index">
+      <view class="left">
+        <view class="icon iconfont icon-guanyu_o"></view>
+        <view class="feature_title">关于星星记账</view>
+      </view>
+      <view class="right">></view>
+    </navigator>
+  </view>
+</view>

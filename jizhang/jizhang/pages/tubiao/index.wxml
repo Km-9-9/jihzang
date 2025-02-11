@@ -1,0 +1,53 @@
+<view class="tubiao">
+    <view class="top">
+
+        <!-- 筛选 -->
+        <view class="filter">
+            <view class="filter_time" bindtap="handleMonth">
+                {{yearNow}}-{{monthNow}}
+                <van-icon name="clock-o" />
+            </view>
+            <view class="filter_isactive">
+                <van-radio-group value="{{ isActive }}" bind:change="onChangeLeixing">
+                    <van-radio use-icon-slot value="{{ isActive }}" name="1">
+                        <van-button type="primary"
+                            color="{{ isActive === '1' ? '#ad8ef6' : '#966fef' }}">支出</van-button>
+                    </van-radio>
+                    <van-radio use-icon-slot value="{{ isActive }}" name="2">
+                        <van-button type="primary"
+                            color="{{ isActive === '2' ? '#ad8ef6' : '#966fef' }}">收入</van-button>
+                    </van-radio>
+                </van-radio-group>
+
+            </view>
+        </view>
+
+        <!-- 总支出or总收入 -->
+        <view class="total" wx:if="{{isActive == '1'}}">
+            <view class="text">总支出</view>
+            <view class="money">￥{{totalExpend}}</view>
+        </view>
+        <view class="total" wx:if="{{isActive == '2'}}">
+            <view class="text">总收入</view>
+            <view class="money">￥{{totalIncome}}</view>
+        </view>
+
+    </view>
+
+    <!-- 图表 -->
+     <!-- 饼图 -->
+    <view class="container" hidden="{{showMonth}}">
+        <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+    </view>
+
+    <!-- 柱状图 -->
+    <view class="container1" hidden="{{showMonth}}">
+        <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec1 }}"></ec-canvas>
+    </view>
+
+    <!-- 选择年月 -->
+  <van-action-sheet show="{{ showMonth }}" title="选择日期" bind:close="onCloseMonth">
+    <van-datetime-picker type="year-month" value="{{ currentDate }}" bind:input="onInput" bind:confirm="filterJizhang" bind:cancel="onCloseMonth" />
+  </van-action-sheet>
+
+</view>

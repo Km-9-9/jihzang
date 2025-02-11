@@ -1,0 +1,59 @@
+.login {
+  width: 750rpx;
+  height: 100vh;
+}
+.login .container {
+  margin: 0 50rpx 0 50rpx;
+}
+.login .container .title {
+  font-size: 46rpx;
+  padding-top: 100rpx;
+}
+.login .container .top {
+  margin-top: 240rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 650rpx;
+}
+.login .container .top .input {
+  display: flex;
+  align-items: center;
+  background-color: #f0f4f8;
+  border: 1px solid white;
+  border-radius: 15rpx;
+  height: 120rpx;
+  width: 650rpx;
+  margin-bottom: 30rpx;
+}
+.login .container .top .input input {
+  margin-left: 20rpx;
+}
+.login .container .top .input .icon {
+  margin-left: 20rpx;
+}
+.login .container .singin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333333;
+  width: 600rpx;
+  height: 110rpx;
+  border-radius: 50rpx;
+  margin: 0 auto;
+  font-size: 40rpx;
+  margin-top: 30rpx;
+}
+.login .container .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 600rpx;
+  height: 110rpx;
+  background-color: var(--jizhangColor);
+  border-radius: 50rpx;
+  margin: 0 auto;
+  font-size: 34rpx;
+  margin-top: 200rpx;
+}

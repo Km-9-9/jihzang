@@ -1,0 +1,14 @@
+page {
+  height: 100vh;
+}
+.remind .content {
+  font-size: 30rpx;
+}
+.remind .content .zhichu {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.remind .content .shouru {
+  height: 100rpx;
+  line-height: 100rpx;
+}

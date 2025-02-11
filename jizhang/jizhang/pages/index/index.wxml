@@ -1,0 +1,80 @@
+<view class="index">
+
+  <!-- 上面标题、日期、总收入和总支出 -->
+  <view class="top">
+    <view class="title">km记账</view>
+    <view class="leixing">
+      <view class="box" bindtap="showFenlei">
+        <view class="text">{{type == '' ? '全部类型': type}}</view>
+        <van-icon name="apps-o" />
+      </view>
+    </view>
+    <view class="menu">
+      <view class="time menu_item" bindtap="handleMonth">
+        <view class="text">{{yearNow}}年</view>
+        <view class="money">
+          <view class="big">{{monthNow}}</view>
+          <view class="small">月</view>
+          <van-icon name="arrow-down" />
+        </view>
+      </view>
+      <view class="shouru menu_item">
+        <view class="text">支出</view>
+        <view class="money">
+          <view class="big">{{totalExpend}}</view>
+        </view>
+      </view>
+      <view class="zhichu menu_item">
+        <view class="text">收入</view>
+        <view class="money">
+          <view class="big">{{totalIncome}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="con_item" wx:for="{{recordsList}}" wx:key="time">
+      <view class="time">
+        <view class="riqi">{{item.time}}</view>
+        <view class="week">{{item.day}}</view>
+      </view>
+      <view class="box" wx:for="{{item.child}}" wx:key="id" wx:for-item="item1" bindtap="toEdit" data-id="{{item1.id}}">
+        <view class="left">
+          <view class="img">
+            <image wx:if="{{item1.type == '餐饮'}}" src="../../images/餐饮.png" />
+            <image wx:if="{{item1.type == '购物'}}" src="../../images/购物.png" />
+            <image wx:if="{{item1.type == '交通'}}" src="../../images/交通.png" />
+            <image wx:if="{{item1.type == '娱乐'}}" src="../../images/娱乐.png" />
+            <image wx:if="{{item1.type == '旅行'}}" src="../../images/旅行.png" />
+            <image wx:if="{{item1.type == '工资'}}" src="../../images/工资.png" />
+            <image wx:if="{{item1.type == '理财'}}" src="../../images/理财.png" />
+            <image wx:if="{{item1.type == '其它收入'}}" src="../../images/其它收入.png" />
+          </view>
+        </view>
+        <view class="right">
+          <view class="leixing">
+            <view class="fenlei">{{item1.type}}</view>
+            <view class="beizhu" wx:if="{{item1.msg}}">{{item1.msg}}</view>
+          </view>
+          <view class="money" wx:if="{{item1.isActive == 1}}">
+            -{{item1.money}}
+          </view>
+          <view class="money" wx:else>
+            +{{item1.money}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 选择年月 -->
+  <van-action-sheet show="{{ showMonth }}" title="选择日期" bind:close="onCloseMonth">
+    <van-datetime-picker type="year-month" value="{{ currentDate }}" bind:input="onInput" bind:confirm="filterJizhang" bind:cancel="onCloseMonth" />
+  </van-action-sheet>
+  
+  <!-- 筛选分类弹出框 -->
+  <van-action-sheet show="{{ showFenlei }}" actions="{{ actions }}" bind:close="onCloseFenlei" bind:select="onSelect"
+    title="选择类型" />
+
+</view>
