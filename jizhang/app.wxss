@@ -14,8 +14,9 @@ navigator {
 
 /* 主题颜色 */
 page {
-  --jizhangColor: #966fef;
+  --jizhangColor: #FFDF8C;
   font-size: 28rpx;
+  font-weight: bold;
 }
 
 image {

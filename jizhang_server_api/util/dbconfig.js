@@ -9,8 +9,9 @@ var db = mysql.createConnection({
     database: 'jizhang'  // 数据库名称
 });
 db.connect((err) => {
-    err ? console.log("数据库连接失败！",err) : console.log("数据库连接成功！",db.query);
-    
+    // err存在则失败，为null则成功
+    err ? console.log("数据库连接失败！", err) : console.log("数据库连接成功！", db.query);
+
 });
 module.exports = db;
 

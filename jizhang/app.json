@@ -13,7 +13,8 @@
     "pages/dd/index",
     "pages/about/index",
     "pages/info/index",
-    "pages/remind/index"
+    "pages/remind/index",
+    "pages/changePassword/index"
   ],
   "permission":{
     "scope.userLocation":{
@@ -22,12 +23,12 @@
   },
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#966fef",
-    "navigationBarTitleText": "星星记账"
+    "navigationBarBackgroundColor": "#FFDF8C",
+    "navigationBarTitleText": "睡蕉记账"
   },
   "tabBar": {
     "color": "#7b7b7b",
-    "selectedColor":"#966fef",
+    "selectedColor":"#FFDF8C",
     "backgroundColor": "#FFFFFF",
     "list": [
       {

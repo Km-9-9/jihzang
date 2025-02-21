@@ -1,5 +1,0 @@
-<view class="get">
-    <view class="btn_box">
-      <button class="btn" open-type="getUserInfo" bindtap="getUserProfile">获取用户信息</button>
-    </view>
-  </view>

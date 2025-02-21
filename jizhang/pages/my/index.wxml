@@ -42,8 +42,13 @@
     <navigator class="feature_item" hover-class="none" url="../about/index">
       <view class="left">
         <view class="icon iconfont icon-guanyu_o"></view>
-        <view class="feature_title">关于星星记账</view>
+        <view class="feature_title">关于睡蕉记账</view>
       </view>
+<!--      
+      <view>
+      <button> 登录 </button>
+      </view> -->
+
       <view class="right">></view>
     </navigator>
   </view>

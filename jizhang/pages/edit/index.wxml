@@ -6,10 +6,10 @@
           <view class="inp">
             <van-radio-group value="{{ detail.isActive }}" bind:change="onChange">
               <van-radio use-icon-slot value="{{ detail.isActive }}" name="1">
-                <van-button type="default" color="{{ detail.isActive === '1' ? '#966fef' : '' }}">支出</van-button>
+                <van-button type="default" color="{{ detail.isActive === '1' ? '#FF9966' : '' }}">支出</van-button>
               </van-radio>
               <van-radio use-icon-slot value="{{ detail.isActive }}" name="2">
-                <van-button type="default" color="{{ detail.isActive === '2' ? '#966fef' : '' }}">收入</van-button>
+                <van-button type="default" color="{{ detail.isActive === '2' ? '#FF9966' : '' }}">收入</van-button>
               </van-radio>
             </van-radio-group>
           </view>
@@ -64,9 +64,9 @@
         </view>
       </view>
     
-      <van-button custom-class="btn" round type="info" color="#966fef" bind:click="editRecords">确认修改</van-button>
+      <van-button custom-class="btn" round type="info" color="#FF9966" bind:click="editRecords">确认修改</van-button>
 
-      <van-button custom-class="btn1" round type="default" plain color="#966fef" bind:click="delRecords">删除记账</van-button>
+      <van-button custom-class="btn1" round type="default" plain color="#FF9966" bind:click="delRecords">删除记账</van-button>
     
       <!-- 选择分类弹出框 -->
       <van-action-sheet show="{{ showFenlei }}" actions="{{ actions }}" bind:close="onCloseFenlei" bind:select="onSelect"

@@ -38,7 +38,7 @@ app.post(
   "/upload",
   multer({
     //设置文件存储路径
-    dest: "public/image", 
+    dest: "public/image",
   }).array("file", 1),
   function (req, res, next) {
     console.log(req.files[0])
@@ -53,7 +53,7 @@ app.post(
     fileInfo.name = file.originalname;
     fileInfo.size = file.size;
     fileInfo.path = path;
-       // string.substr(start,length) 从某一项开始，到某一项结束截取字符串，如果第二项不写就是从某一项开始截取后面所有字符串；
+    // string.substr(start,length) 从某一项开始，到某一项结束截取字符串，如果第二项不写就是从某一项开始截取后面所有字符串；
     var imgUrl = `http://127.0.0.1:5000/${path}`
     res.json({
       code: 200,
@@ -66,8 +66,8 @@ app.post(
   }
 );
 
-// module.exports = app;  改写之后这里就不用暴露出去了 ，直接在下面写一个监听端口
-server.listen(5000,()=>{
+// module.exports = app;  在下面写一个监听端口
+server.listen(5000, () => {
   console.log("服务器启动成功！");
   console.log("可以使用http:127.0.0.1:5000进行访问了");
 });

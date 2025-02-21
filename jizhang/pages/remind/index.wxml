@@ -10,7 +10,7 @@
               use-button-slot
               bind:change="onChange"
             >
-              <van-button slot="button" size="small" type="primary" bind:click="setBudget">
+              <van-button slot="button" size="small" type="primary" bind:click="setBudget" color="#FF9966">
                 保存
               </van-button>
             </van-field>

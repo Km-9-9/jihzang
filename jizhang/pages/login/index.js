@@ -33,6 +33,7 @@ Page({
       wx.showLoading({
         title: '加载中...',
       })
+      // 通过 wx.request 方法发送请求到后端服务器
       wx.request({
         url: 'http://127.0.0.1:5000/signIn',
         data: {

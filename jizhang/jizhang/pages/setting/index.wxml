@@ -1,5 +1,0 @@
-<view class="set">
-    <view class="btn_box">
-        <button bindtap="exitLogin" class="btn" type="primary">退出登录</button>
-    </view>
-</view>

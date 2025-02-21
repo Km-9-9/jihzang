@@ -11,11 +11,11 @@
                 <van-radio-group value="{{ isActive }}" bind:change="onChangeLeixing">
                     <van-radio use-icon-slot value="{{ isActive }}" name="1">
                         <van-button type="primary"
-                            color="{{ isActive === '1' ? '#ad8ef6' : '#966fef' }}">支出</van-button>
+                            color="{{ isActive === '1' ? '#FF9966' : ' #FFA682' }}">支出</van-button>
                     </van-radio>
                     <van-radio use-icon-slot value="{{ isActive }}" name="2">
                         <van-button type="primary"
-                            color="{{ isActive === '2' ? '#ad8ef6' : '#966fef' }}">收入</van-button>
+                            color="{{ isActive === '2' ? '#FF9966' : ' #FFA682' }}">收入</van-button>
                     </van-radio>
                 </van-radio-group>
 

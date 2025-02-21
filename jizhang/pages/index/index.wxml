@@ -2,7 +2,7 @@
 
   <!-- 上面标题、日期、总收入和总支出 -->
   <view class="top">
-    <view class="title">km记账</view>
+    <view class="title">睡蕉记账</view>
     <view class="leixing">
       <view class="box" bindtap="showFenlei">
         <view class="text">{{type == '' ? '全部类型': type}}</view>
@@ -42,6 +42,7 @@
       <view class="box" wx:for="{{item.child}}" wx:key="id" wx:for-item="item1" bindtap="toEdit" data-id="{{item1.id}}">
         <view class="left">
           <view class="img">
+          <!-- wx:if 小程序的条件渲染指令，用于根据表达式的真假值来决定是否渲染某个元素。 -->
             <image wx:if="{{item1.type == '餐饮'}}" src="../../images/餐饮.png" />
             <image wx:if="{{item1.type == '购物'}}" src="../../images/购物.png" />
             <image wx:if="{{item1.type == '交通'}}" src="../../images/交通.png" />

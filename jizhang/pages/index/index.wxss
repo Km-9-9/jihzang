@@ -12,6 +12,7 @@ page {
   text-align: center;
   line-height: 120rpx;
   font-size: 40rpx;
+  font-weight: bold;
 }
 .index .top .leixing {
   height: 60rpx;
@@ -20,13 +21,15 @@ page {
   justify-content: flex-start;
   align-items: center;
 }
+/* 全部类型 */
 .index .top .leixing .box {
-  width: 200rpx;
+  
+  width: 255rpx;
   height: 50rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #a580fa;
+  background-color: #FFDF8C;
 }
 .index .top .leixing .box .text {
   width: 140rpx;
@@ -36,6 +39,7 @@ page {
   justify-content: center;
   align-items: center;
   font-size: 28rpx;
+  text-indent: -95rpx;
 }
 .index .top .leixing .box .van-icon {
   width: 60rpx;

@@ -14,19 +14,10 @@
             title-width="130rpx"
             size="large"
             />
-            <van-field
-            label="密码"
-            value="{{ paw }}"
-            placeholder="请输入密码"
-            border="{{ false }}"
-            title-width="130rpx"
-            bind:change="onChangePaw"
-            size="large"
-            />
-          </van-cell-group>
+        </van-cell-group>
     </view>
 
     <view class="btn">
-        <view class="sub" bindtap="editUserInfo">保存</view>
+        <view class="sub" bindtap="goToChangePassword">修改密码</view>
     </view>
 </view>

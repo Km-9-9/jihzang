@@ -34,7 +34,7 @@ Page({
     let now = new Date()
     let yearNow = now.getFullYear()
     let monthNow = now.getMonth() + 1
-
+    monthNow = (monthNow < 10) ? '0' + monthNow : monthNow.toString()
     this.setData({
       yearNow,
       monthNow
