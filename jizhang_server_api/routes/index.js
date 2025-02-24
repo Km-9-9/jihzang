@@ -258,27 +258,46 @@ router.get('/editBudget', (req, res) => {
 		}
 	});
 });
-
 // 修改记账
 router.get('/editInfo', (req, res) => {
 	console.log(req.query);
-	let sql =
-		`update info set isActive='${req.query.isActive}', money='${req.query.money}', msg='${req.query.msg}', time='${req.query.time}', day='${req.query.day}', type='${req.query.type}', num='${req.query.num}' where id=${req.query.id}`
-	db.query(sql, [req.query.isActive, req.query.money, req.query.msg, req.query.time, req.query.day, req
-		.query.type, req.query.num], function (err, data) {
-			if (err) {
-				res.send({
-					code: 500,
-					msg: "添加失败!",
-				});
-				console.log(err)
-			} else {
-				res.send({
-					msg: "添加成功!",
-					code: 200
-				});
-			}
-		});
+
+	// 参数化查询（安全写法）
+	const sql = `UPDATE info SET 
+        isActive = ?, 
+        money = ?, 
+        msg = ?, 
+        time = ?, 
+        day = ?, 
+        type = ?, 
+        num = ? 
+        WHERE id = ?`;
+
+	const values = [
+		req.query.isActive,
+		req.query.money,
+		req.query.msg,
+		req.query.time,
+		req.query.day,
+		req.query.type,
+		req.query.num,
+		req.query.id
+	];
+
+	db.query(sql, values, function (err, data) {
+		if (err) {
+			console.error('SQL Error:', err);
+			res.send({
+				code: 500,
+				msg: "修改失败!"
+			});
+		} else {
+			res.send({
+				msg: "修改成功!",
+				code: 200
+			});
+		}
+	});
 });
 
 // 根据记账id删除记账

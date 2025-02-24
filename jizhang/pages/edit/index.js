@@ -229,18 +229,22 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
-    wx.request({
-      url: 'http://127.0.0.1:5000/editInfo',
-      data: {
-        id: this.data.id,
-        isActive: this.data.detail.isActive,
-        money: this.data.detail.money,
-        msg: this.data.detail.msg,
-        time: this.data.detail.time,
-        day: this.data.detail.day,
-        type: this.data.detail.type,
-        num: this.data.detail.num
-      },
+   // 修改提交部分
+// 修改提交部分代码
+wx.request({
+  url: 'http://127.0.0.1:5000/editInfo',
+  data: {
+      id: this.data.id,
+      isActive: this.data.detail.isActive,
+      money: this.data.detail.money,
+      msg: this.data.detail.msg,
+      time: this.data.detail.time,
+      day: this.data.detail.day,
+      type: this.data.detail.type,
+      num: this.data.detail.num,
+      tel: wx.getStorageSync('userInfo').tel // 添加用户手机号
+  },
+
       header: {
         'content-type': 'application/json'
       },
