@@ -75,6 +75,7 @@ page {
 }
 .index .top .menu .menu_item .money .big {
   font-size: 38rpx;
+  transform: translateY(2.5px);
 }
 .index .top .menu .menu_item .money .small {
   font-size: 28rpx;
@@ -87,16 +88,42 @@ page {
   border-radius: 25rpx;
   box-shadow: 0px 0px 10px rgba(177, 177, 177, 0.5);
 }
+
 .index .content .con_item .time {
   display: flex;
+  align-items: center; /* 垂直居中 */
   height: 80rpx;
-  line-height: 80rpx;
   border-bottom: 1rpx solid #eee;
   font-size: 32rpx;
+  padding: 0 20rpx; /* 增加左右内边距 */
 }
-.index .content .con_item .time .riqi {
-  margin-right: 20rpx;
+
+.btn-wrapper {
+  margin-left: auto; /* 关键右对齐属性 */
 }
+
+.backup-btn {
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  background: #7E8AE0;
+  color: #fff;
+  border-radius: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(109,190,79,0.15);
+  transition: all 0.3s;
+  border: none;
+}
+
+.backup-btn:active {
+  background: #6774D6; 
+}
+
+/* 去除按钮默认样式 */
+button::after {
+  display: none;
+}
+
 .index .content .con_item .box {
   display: flex;
   align-items: center;

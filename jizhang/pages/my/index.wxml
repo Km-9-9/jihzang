@@ -32,6 +32,13 @@
       </view>
       <view class="right">></view>
     </navigator>
+    <navigator class="feature_item" hover-class="none" url="../backup/index">
+      <view class="left">
+        <view class="icon iconfont icon-sort"></view>
+        <view class="feature_title">备份/恢复</view>
+      </view>
+      <view class="right">></view>
+    </navigator>
     <navigator class="feature_item" hover-class="none" url="../setting/index">
       <view class="left">
         <view class="icon iconfont icon-shezhi"></view>

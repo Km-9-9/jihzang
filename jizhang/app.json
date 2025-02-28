@@ -14,7 +14,8 @@
     "pages/about/index",
     "pages/info/index",
     "pages/remind/index",
-    "pages/changePassword/index"
+    "pages/changePassword/index",
+    "pages/backup/index"
   ],
   "permission":{
     "scope.userLocation":{
@@ -61,6 +62,7 @@
         "selectedIconPath": "images/icons/my_color.png",
         "text": "我的"
       }
+      
     ]
   },
   "sitemapLocation": "sitemap.json"

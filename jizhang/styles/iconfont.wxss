@@ -4,7 +4,6 @@
        url('//at.alicdn.com/t/c/font_4740695_w3dusmy8py.woff?t=1733713060652') format('woff'),
        url('//at.alicdn.com/t/c/font_4740695_w3dusmy8py.ttf?t=1733713060652') format('truetype');
 }
-
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -72,3 +71,5 @@
 .icon-sort:before {
   content: "\e65e";
 }
+
+

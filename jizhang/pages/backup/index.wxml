@@ -1,0 +1,55 @@
+<view class="container">
+  <!-- 备份区域 -->
+  <view class="section">
+    <view class="title">数据备份</view>
+    <view class="date-pickers">
+      <picker 
+        mode="date" 
+        bindchange="bindStartDateChange"
+        fields="day"
+        value="{{backupStart}}"
+      >
+        <view class="date-item">开始日期：{{backupStart || '请选择'}}</view>
+      </picker>
+      <picker 
+        mode="date" 
+        bindchange="bindEndDateChange"
+        fields="day"
+        value="{{backupEnd}}"
+      >
+        <view class="date-item">结束日期：{{backupEnd || '请选择'}}</view>
+      </picker>
+    </view>
+    <button 
+      class="custom-btn backup-btn"
+      bindtap="handleBackupByRange"
+    >立即备份</button>
+  </view>
+
+  <!-- 恢复区域 -->
+  <view class="section">
+    <view class="title">数据恢复</view>
+    <view class="date-pickers">
+      <picker 
+        mode="date" 
+        bindchange="bindRestoreStartDateChange"
+        fields="day"
+        value="{{restoreStart}}"
+      >
+        <view class="date-item">开始日期：{{restoreStart || '请选择'}}</view>
+      </picker>
+      <picker 
+        mode="date" 
+        bindchange="bindRestoreEndDateChange"
+        fields="day"
+        value="{{restoreEnd}}"
+      >
+        <view class="date-item">结束日期：{{restoreEnd || '请选择'}}</view>
+      </picker>
+    </view>
+    <button 
+      class="custom-btn restore-btn"
+      bindtap="handleRestoreByRange"
+    >立即恢复</button>
+  </view>
+</view>

@@ -114,26 +114,7 @@ Page({
                 wx.hideLoading()
             }
         })
-        // let recordsList = this.data.recordsList
-        // let type = this.data.type
 
-        // let res = []
-        // let list = []
-        // recordsList.forEach((item, index) => {
-
-        //     res = item.child.filter(item1 => {
-
-        //         return item1.type == type
-        //     })
-        //     console.log(res);
-
-        //     list.push(...res)
-        // })
-        // console.log(list);
-
-        // this.setData({
-        //     showMonth: false
-        // })
     },
 
     // 关闭分类弹出框
@@ -268,93 +249,42 @@ Page({
         })
     },
 
-    // 根据日期筛选记账记录
-    filterJizhang() {
-        this.changeTime(this.data.currentDate)
-        this.getJizhang()
 
-        this.setData({
-            showMonth: false,
-            type: ''
-        })
-    },
-
-
-    // 获取当前年月的记账信息
-    // getJizhang() {
-    //     wx.showLoading({
-    //         title: '加载中...',
-    //     })
-    //     wx.request({
-    //         url: 'http://127.0.0.1:5000/getInfo',
-    //         data: {
-    //             tel: '17860252293'
-    //         },
-    //         header: {
-    //             'content-type': 'application/json'
-    //         },
-    //         success: res => {
-    //             //   console.log(res)
-    //             let list = res.data.list
-    //             let arr = {}
-
-    //             list.forEach((item, index) => {
-    //                 let { time, day } = item
-    //                 if (!arr[time] && !arr[day]) {
-    //                     arr[time] = {
-    //                         time,
-    //                         day,
-    //                         child: []
-    //                     }
-    //                 }
-    //                 arr[time].child.push(item)
-    //             })
-    //             let recordInfo = Object.values(arr)
-    //             recordInfo.sort((a, b) => new Date(a.time) - new Date(b.time))
-    //             // console.log(recordInfo)
-    //             this.setData({
-    //                 recordInfo
-    //             })
-    //             // console.log(recordInfo);
-    //             // 筛选当前月份的记账
-    //             let recordsList = []
-
-    //             recordsList = recordInfo.filter(item => {
-    //                 return new Date(item.time).getFullYear() == this.data.yearNow && new Date(item.time).getMonth() + 1 == this.data.monthNow
-    //             })
-
-    //             let totalExpend = 0
-    //             let totalIncome = 0
-
-    //             recordsList.forEach((item, index) => {
-    //                 // 总支出
-    //                 totalExpend = totalExpend + item.child.reduce((sum, item1) => {
-    //                     if (item1.isActive == 1) {
-    //                         return sum + +item1.money
-    //                     }
-    //                     return sum
-    //                 }, 0)
-
-    //                 // 总收入
-    //                 totalIncome = totalIncome + item.child.reduce((sum, item1) => {
-    //                     if (item1.isActive == 2) {
-    //                         return sum + +item1.money
-    //                     }
-    //                     return sum
-    //                 }, 0)
-    //             })
-    //             this.setData({
-    //                 totalExpend,
-    //                 totalIncome,
-    //                 recordsList
-    //             })
-    //             console.log(recordsList);
-    //             wx.hideLoading()
-    //             // console.log('a');
-
-    //         }
-    //     })
-    // },
-
+    handleBackup(event) {
+      const time = event.currentTarget.dataset.time;
+      const tel = wx.getStorageSync('tel');
+      wx.showLoading({
+          title: '备份中...',
+      });
+      wx.request({
+          url: 'http://127.0.0.1:5000/backupToManual',
+          method: 'GET',
+          data: {
+              tel: tel,
+              time: time
+          },
+          success: (res) => {
+              wx.hideLoading();
+              if (res.data.code === 200) {
+                  wx.showToast({
+                      title: res.data.msg,
+                      icon: 'success'
+                  });
+              } else {
+                  wx.showToast({
+                      title: res.data.msg || '备份失败',
+                      icon: 'none'
+                  });
+              }
+          },
+          fail: (err) => {
+              wx.hideLoading();
+              wx.showToast({
+                  title: '网络错误，请重试',
+                  icon: 'none'
+              });
+          }
+      });
+  },
 });
 

@@ -32,42 +32,44 @@
       </view>
     </view>
   </view>
-
   <view class="content">
-    <view class="con_item" wx:for="{{recordsList}}" wx:key="time">
-      <view class="time">
-        <view class="riqi">{{item.time}}</view>
-        <view class="week">{{item.day}}</view>
+  <view class="con_item" wx:for="{{recordsList}}" wx:key="time">
+    <view class="time">
+      <view class="riqi">{{item.time}}</view>
+      <view class="week">{{item.day}}</view>
+      <view class="btn-wrapper">
+        <button class="backup-btn" bindtap="handleBackup" data-time="{{item.time}}">备份ヾ(≧▽≦*)o</button>
       </view>
-      <view class="box" wx:for="{{item.child}}" wx:key="id" wx:for-item="item1" bindtap="toEdit" data-id="{{item1.id}}">
-        <view class="left">
-          <view class="img">
-          <!-- wx:if 小程序的条件渲染指令，用于根据表达式的真假值来决定是否渲染某个元素。 -->
-            <image wx:if="{{item1.type == '餐饮'}}" src="../../images/餐饮.png" />
-            <image wx:if="{{item1.type == '购物'}}" src="../../images/购物.png" />
-            <image wx:if="{{item1.type == '交通'}}" src="../../images/交通.png" />
-            <image wx:if="{{item1.type == '娱乐'}}" src="../../images/娱乐.png" />
-            <image wx:if="{{item1.type == '旅行'}}" src="../../images/旅行.png" />
-            <image wx:if="{{item1.type == '工资'}}" src="../../images/工资.png" />
-            <image wx:if="{{item1.type == '理财'}}" src="../../images/理财.png" />
-            <image wx:if="{{item1.type == '其它收入'}}" src="../../images/其它收入.png" />
-          </view>
+    </view>
+
+    <view class="box" wx:for="{{item.child}}" wx:key="id" wx:for-item="item1" bindtap="toEdit" data-id="{{item1.id}}">
+      <view class="left">
+        <view class="img">
+          <image wx:if="{{item1.type == '餐饮'}}" src="../../images/餐饮.png" />
+          <image wx:if="{{item1.type == '购物'}}" src="../../images/购物.png" />
+          <image wx:if="{{item1.type == '交通'}}" src="../../images/交通.png" />
+          <image wx:if="{{item1.type == '娱乐'}}" src="../../images/娱乐.png" />
+          <image wx:if="{{item1.type == '旅行'}}" src="../../images/旅行.png" />
+          <image wx:if="{{item1.type == '工资'}}" src="../../images/工资.png" />
+          <image wx:if="{{item1.type == '理财'}}" src="../../images/理财.png" />
+          <image wx:if="{{item1.type == '其它收入'}}" src="../../images/其它收入.png" />
         </view>
-        <view class="right">
-          <view class="leixing">
-            <view class="fenlei">{{item1.type}}</view>
-            <view class="beizhu" wx:if="{{item1.msg}}">{{item1.msg}}</view>
-          </view>
-          <view class="money" wx:if="{{item1.isActive == 1}}">
-            -{{item1.money}}
-          </view>
-          <view class="money" wx:else>
-            +{{item1.money}}
-          </view>
+      </view>
+      <view class="right">
+        <view class="leixing">
+          <view class="fenlei">{{item1.type}}</view>
+          <view class="beizhu" wx:if="{{item1.msg}}">{{item1.msg}}</view>
+        </view>
+        <view class="money" wx:if="{{item1.isActive == 1}}">
+          -{{item1.money}}
+        </view>
+        <view class="money" wx:else>
+          +{{item1.money}}
         </view>
       </view>
     </view>
   </view>
+</view>
 
   <!-- 选择年月 -->
   <van-action-sheet show="{{ showMonth }}" title="选择日期" bind:close="onCloseMonth">
