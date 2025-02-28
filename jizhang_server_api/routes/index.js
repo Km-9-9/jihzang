@@ -621,7 +621,7 @@ router.get('/restoreFromManualByRange', async (req, res) => {
 
 		res.json({
 			code: 200,
-			msg: `恢复成功，共恢复 ${insertedCount} 条数据`,
+			msg: `恢复成功`,
 		});
 	} catch (err) {
 		console.error('恢复失败:', err);
